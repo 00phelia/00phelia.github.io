@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Journal-ify</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/modern-business.css" rel="stylesheet">
+  <link href="css/card.css" rel="stylesheet">
+
+  <script src="log_inputs.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Welcome</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="portfolio-4-col.html">Today's Progress</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="GoogleSchedule/calendar.html">Calendar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Settings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+
+        <!--  <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Other Pages
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              <a class="dropdown-item" href="full-width.html">Full Width Page</a>
+              <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
+              <a class="dropdown-item" href="faq.html">FAQ</a>
+              <a class="dropdown-item" href="404.html">404</a>
+              <a class="dropdown-item" href="pricing.html">Pricing Table</a>
+            </div>
+          </li>-->
+          <li class="nav-item">
+            <a class="nav-link" href="faq.html">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">Today's Progress:
+      <small>Thursday, August 22, 2019 <!--fix to calendar later--></small>
+    </h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="index.html">Home</a>
+      </li>
+      <li class="breadcrumb-item active">Today's Progress</li>
+    </ol>
+
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="expn.jpg" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              Ranking of the Day
+            </h4>
+            <p class="card-text">
+              <form name="ranking">
+                <input type="radio" name="ranking" value="greatday"/> Great <br>
+                <input type="radio"  name="ranking" value="goodday">  Good<br>
+                <input type="radio"  name="ranking" value="okday"> Ok <br>
+                <input type="radio" name="ranking"  value="badday"> Bad <br>
+                <input type="radio" name="ranking"  value="terribleday"> Terrible <br>
+                <input type="button" value="Log" onclick="log_day_ranking()" class="inputbutton">
+              </form>
+              <div id="ranking"></div>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="sleephrs.jpg" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              Hours Slept Last Night
+            </h4>
+
+            <p class="card-text">
+              <form name="hours_slept">
+                <input type="number" name="hours" id="hours" />
+                <input type="button" name="button_hours_slept" onclick="log_hours_slept()" value="Log" class="inputbutton"/>
+              </form>
+              <div id="hours_slept"></div>
+            </p>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="ext.png" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              Exercise Today
+            </h4>
+            <p class="card-text">
+              <form name="exercise">
+                <input type="checkbox" id="exercise"> <br>
+                <input type="button" value="Log" onclick="log_exercise()" class="inputbutton">
+              </form>
+              <div id="exercised">
+              </div>
+            </p>
+              <!--  <form name="hours_slept">
+                  <input type="number" name="hours" id="hours" />
+                  <input type="button" name="button_hours_slept" onclick="log_hours_slept()" value="Log" />
+                </form>
+
+        <div id="hours_slept"></div></p>-->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="today.png" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              Time Spent Studying (hrs)
+            </h4>
+            <p class="card-text">
+              <form name="hours_studied">
+                <input type="number" name="study" id="study" />
+                <input type="button" name="button_hours_studied" onclick="log_hours_studied()" value="Log" class="inputbutton" />
+              </form>
+
+      <div id="hours_slept"></div></p></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="makebed.png" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              Make Bed
+            </h4>
+            <p class="card-text">
+              <form name="makebed">
+                <input type="checkbox" id="bed"> <br>
+                <input type="button" value="Log" onclick="log_bed()" class="inputbutton">
+
+              </form>
+
+            <div id="madebed">
+            </div>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="watrrrr.png" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              Cups of Water Drank
+            </h4>
+            <p class="card-text">
+              <form name="water_drank">
+                <input type="number" name="water" id="water" />
+                <input type="button" name="button_water_drank" onclick="log_water_drank()" value="Log" class="inputbutton"/>
+              </form>
+              <div id="water_drank"> </div>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="readt.png" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              Read Today
+            </h4>
+            <p class="card-text">
+              <form name="readbook" method="get">
+                <input type="checkbox" id="read" class="checkbox"> <br>
+                <input type="button" value="Log" onclick="log_books()" class="inputbutton">
+              </form>
+
+              <div id="readtoday">
+              </div>
+
+              <form name="book" id="whatbook" style="display:none">
+                <p> What book was it? </p>
+                <input type="text" id="bookreading"> <br>
+                <input type= "button" value="Log" onlick="whatbooks()" class="inputbutton">
+              </form>
+
+              <div id = "book_comment">
+              </div>
+            </p>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="dishes.png" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              Wash the Dishes
+            </h4>
+            <p class="card-text">
+              <form name="" method="get">
+                <input type="checkbox" id="dishes"> <br>
+                <input type="button" value="Log" onclick="log_dishes()" class="inputbutton">
+              </form>
+              <div id="washeddishes">
+            </div>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <!-- <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">1</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">2</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">3</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul> -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Journal-ify 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="log_inputs.js"></script>
+
+</body>
+
+</html>
